@@ -12,7 +12,7 @@ public class Allreq {
 
 //    @Override
 //    @RequestMapping("homepage")
-   
+
     @GetMapping("/hello")
     public String renderAPage(Model viewName){
         viewName.addAttribute("name","Ahmad");
