@@ -1,10 +1,17 @@
 package com.example.songr ;
 
+import com.example.songr.Repo.Repo;
+import com.example.songr.control.albums;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.view.RedirectView;
+
+import java.util.List;
 
 @Controller
 public class Allreq {
@@ -38,4 +45,24 @@ public class Allreq {
     public String albums(){
       return "Home page";
     }
+
+ @Autowired
+    Repo Repo;
+    @PostMapping("/create")
+    public RedirectView addsong()
+    {
+        albums newStore = new albums("th","asd",12,32,"asd");
+        Repo.save(newStore);
+        return new RedirectView("/");
+    }
+
+    @GetMapping("/get")
+    public String getSalmonCookiesStores(Model m)
+    {
+        List<albums> songs = Repo.findAll();
+        m.addAttribute("albums",songs);
+        return "album.html";
+
+    }
+
 }
