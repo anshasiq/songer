@@ -17,6 +17,7 @@
 <!--    <button type="submit">Update Artist</button>-->
 <!--</form>-->
 <h1>Add An Album</h1>
+
 <form action="/create" method="post">
     <fieldset>
         <label for="title">Title:</label>
@@ -52,11 +53,10 @@
                     <br>
                    <span>length is </span>
                     <p th:text="${album.length}" class="card-text">length </p>
-
+  <a href="/allSongs/{album.Id}" >go</a>
                 </div>
             </div>
         </div>
-
     </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>

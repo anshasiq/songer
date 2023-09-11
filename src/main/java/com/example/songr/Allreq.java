@@ -1,7 +1,8 @@
 package com.example.songr ;
 
 import com.example.songr.Repo.Repo;
-import com.example.songr.control.albums;
+import com.example.songr.models.Song;
+import com.example.songr.models.albums;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -88,5 +89,6 @@ public class Allreq {
         return "album.html";
 
     }
+
 
 }

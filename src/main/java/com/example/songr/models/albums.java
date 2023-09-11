@@ -1,10 +1,7 @@
-package com.example.songr.control;
-import org.hibernate.annotations.Table;
+package com.example.songr.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 //@Table(name = "employees")
@@ -20,12 +17,19 @@ public class albums {
     private int length;
     private String imageUrl;
 
+    @OneToMany(mappedBy = "songAt", cascade = CascadeType.ALL)
+    private List <Song> songs;
+
     public albums(String title, String artist, int songCount, int length, String imageUrl) {
         this.title = title;
         this.artist = artist;
         this.songCount = songCount;
         this.length = length;
         this.imageUrl = imageUrl;
+    }
+
+    public List<Song> getSongs() {
+        return songs;
     }
 
     public albums() {
