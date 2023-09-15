@@ -53,7 +53,12 @@
                     <br>
                    <span>length is </span>
                     <p th:text="${album.length}" class="card-text">length </p>
-  <a href="/allSongs/{album.Id}" >go</a>
+                    <p th:text="${album.id}" class="card-text">id </p>
+  <a  th:href="@{'/allSongs/' + ${album.id}}" >go</a>
+<!--                    th:href="@{'/allSongs/' + ${album.id}}"-->
+
+                    <!--                    th:href="@{'/allSongs' + $album.id}}"-->
+
                 </div>
             </div>
         </div>
