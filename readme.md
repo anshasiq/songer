@@ -12,6 +12,7 @@ Endpoints
 - @GetMapping("/allSongs/{albumId}") to get all song for a specific album
 - @POSTMapping(/addsong/{albumId}) it will add a song to album your standing in 
 
+#### also i have added a Test cases
 
 #### click on go to display all songs belong to that album and add any songs there
  
